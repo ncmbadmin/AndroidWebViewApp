@@ -12,8 +12,8 @@ jobs:
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Set YOUR_HTML_PUBLIC_URL
-          command: grep -l 'YOUR_HTML_PUBLIC_URL' $(find `pwd` -name "WebviewActivity.java") | xargs sed -i.bak -e "s/YOUR_HTML_PUBLIC_URL/"${YOUR_HTML_PUBLIC_URL:0:-5}"/g"
+          name: Set HTML_PUBLIC_URL
+          command: grep -l 'YOUR_HTML_PUBLIC_URL' $(find `pwd` -name "WebviewActivity.java") | xargs sed -i.bak -e "s/YOUR_HTML_PUBLIC_URL/"${HTML_PUBLIC_URL:0:-5}"/g"
       - run:
           name: Download dependencies
           command: ./gradlew androidDependencies
