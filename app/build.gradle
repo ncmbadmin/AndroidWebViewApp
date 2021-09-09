@@ -1,5 +1,20 @@
 apply plugin: 'com.android.application'
 
+/*
+apply plugin: 'devicefarm'
+def envAccessKey = ENV_ACCESS_KEY
+def envSecretKey = ENV_SECRET_KEY
+devicefarm {
+    projectName "test_android"
+    devicePool "android"
+    authentication {
+        accessKey envAccessKey
+        secretKey envSecretKey
+    }
+    instrumentation { }
+}
+*/
+
 android {
     compileSdkVersion 30
 
@@ -39,6 +54,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-web:3.4.0'
 
     implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
     implementation 'com.google.code.gson:gson:2.8.7'
     implementation files('libs/NCMB.jar')
 }
